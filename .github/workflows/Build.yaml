@@ -10,6 +10,9 @@ concurrency:
   group: build-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  DEVELOCITY_ACCESS_KEY: ${{ secrets.DV_ACCESS_KEY }}
+
 jobs:
   test_and_apk:
     name: "Local tests and APKs"

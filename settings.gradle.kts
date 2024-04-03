@@ -23,6 +23,23 @@ pluginManagement {
     }
 }
 
+plugins {
+    id("com.gradle.develocity") version "3.17"
+    id("com.gradle.common-custom-user-data-gradle-plugin") version "1.13"
+}
+
+develocity {
+    server = "https://ge.solutions-team.gradle.com"
+    buildScan {
+        publishing.onlyIf { true }
+
+        obfuscation {
+            ipAddresses { addresses -> addresses.map { _ -> "0.0.0.0" } }
+        }
+    }
+}
+
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {

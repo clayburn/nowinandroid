@@ -5,6 +5,9 @@ on:
     tags:
     - 'v*'
 
+env:
+  DEVELOCITY_ACCESS_KEY: ${{ secrets.DV_ACCESS_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
